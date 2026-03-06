@@ -32,6 +32,11 @@ minTemp = min(temps);
 maxTemp = max(temps);
 meanTemp = mean(temps);
 
+plot(temps)
+xlabel('Time (seconds)')
+ylabel('Temperature (C)')
+xlim([0 600])
+
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
 
 % Insert answers here
