@@ -1,10 +1,17 @@
-% Insert name here
-% Insert email address here
+% Dan Newington
+% eeydn3@nottingham.ac.uk
 
 
 %% PRELIMINARY TASK - ARDUINO AND GIT INSTALLATION [5 MARKS]
+clear
 
-% Insert answers here
+a = arduino
+for x = 1:10 %repeats the flash 10 times
+    writeDigitalPin(a,'D4',1) %turns onto high power
+    pause(0.5)
+    writeDigitalPin(a,'D4',0) %turns off
+    pause(0.5)
+end
 
 %% TASK 1 - READ TEMPERATURE DATA, PLOT, AND WRITE TO A LOG FILE [20 MARKS]
 
