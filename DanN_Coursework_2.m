@@ -5,7 +5,7 @@
 %% PRELIMINARY TASK - ARDUINO AND GIT INSTALLATION [5 MARKS]
 clear
 
-a = arduino
+a = arduino;
 for x = 1:10 %repeats the flash 10 times
     writeDigitalPin(a,'D4',1) %turns onto high power
     pause(0.5)
@@ -14,8 +14,23 @@ for x = 1:10 %repeats the flash 10 times
 end
 
 %% TASK 1 - READ TEMPERATURE DATA, PLOT, AND WRITE TO A LOG FILE [20 MARKS]
+clear
 
-% Insert answers here
+a = arduino;
+duration = 600;
+volts = zeros(1,duration+1);
+temps = zeros(1,duration+1);
+Volt0C  = 0.5;
+tempCoef = 0.01;
+
+for x = 1:(duration+1) %plus one so that 600 values are taken, 
+    volts(x) = readVoltage(a, 'A0'); %reads voltage from the thermistor
+    temps(x) = (volts(x) - Volt0C)/tempCoef;
+    pause(1)
+end
+minTemp = min(temps);
+maxTemp = max(temps);
+meanTemp = mean(temps);
 
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
 
