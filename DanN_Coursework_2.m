@@ -35,7 +35,7 @@ meanTemp = mean(temps);
 plot(temps)
 xlabel('Time (seconds)')
 ylabel('Temperature (C)')
-xlim([0 600])
+xlim([0 duration])
 
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
 
