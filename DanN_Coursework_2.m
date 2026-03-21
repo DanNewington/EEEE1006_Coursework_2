@@ -78,7 +78,7 @@ temp_monitor(a)
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [30 MARKS]
 
-
+doc temp_monitor
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
 

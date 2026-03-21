@@ -2,9 +2,17 @@ function temp_monitor(a)
     Volt0C  = 0.5; %given specifications for the thermistor
     tempCoef = 0.01;
     x=0;
+    t=0;
+    temps = animatedline;
+    xlabel('Time (seconds)')
+    ylabel('Temperature (C)')
+    title("Time (s) vs Temperature (C)")
     while x == 0 %allows the program to loop indefinitely
         volt = readVoltage(a, 'A0'); %reads voltage from the thermistor
         temp = (volt - Volt0C)/tempCoef;
+        addpoints(temps,t,temp)
+        refreshdata
+        drawnow
         if temp > 24 %checks temp value and completes LED cycle
             for k = 1:2 %does this twice to last for a second
                 writeDigitalPin(a,'D7',1)
@@ -22,5 +30,6 @@ function temp_monitor(a)
             pause(1)
             writeDigitalPin(a,"D2", 0); % Turn off the green LED
         end %all temps end with LEDs off so there is no overlap with which are on
+        t=t+1; %a second will have passed at the end of this loop
     end
 end
