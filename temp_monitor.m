@@ -1,23 +1,20 @@
 function temp_monitor(a)
-    function greenGlow(a)
-        writeDigitalPin(a,'D2',1)
-    end
     function yellowFlash(a)
-        x=0;
-        while x==0
-            writeDigitalPin(a,'D7',1)
+        z=0;
+        while z==0
+            writeDigitalPin(a,'D4',1)
             pause(0.5)
-            writeDigitalPin(a,'D7',0)
+            writeDigitalPin(a,'D4',0)
             pause(0.5)
         end
     end
     function redFlash(a)
-        x=0;
-        while x==0
+        k=0;
+        while k==0
             writeDigitalPin(a,'D7',1)
-            pause(0.5)
+            pause(0.25)
             writeDigitalPin(a,'D7',0)
-            pause(0.5)
+            pause(0.25)
         end
     end
     Volt0C  = 0.5; %given specifications for the thermistor
@@ -38,12 +35,12 @@ function temp_monitor(a)
             writeDigitalPin(a,'D2',0)
             writeDigitalPin(a,'D7',0)
             y = parfeval(backgroudPool,@yellowFlash,0,a);
-        elseif temp >= 18 && temp <= 24 && g.State ~= "running"
+        elseif temp >= 18 && temp <= 24 && readDigitalPin(a,"D2") ~= 1 %checks if the green LED is already lit
             cancel(r)
             cancel(y)
             writeDigitalPin(a,'D4',0)
             writeDigitalPin(a,'D7',0)
-            g = parfeval(backgroundPool,@greenGlow,0,a);
+            writeDigitalPin(a,'D2',1) %no need for function for green as LED ony has to be turned on and state doesn't need to be checked
         end
     end
 end
