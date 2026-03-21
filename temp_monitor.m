@@ -1,3 +1,7 @@
+%This function runs indefinitely and tracks the temperature overtime.
+%It plots an updating graph as the temperature is read every second.
+%It also has LEDs which illuminate based off of different temperature
+%conditions to indicate the temperature range.
 function temp_monitor(a)
     Volt0C  = 0.5; %given specifications for the thermistor
     tempCoef = 0.01;
@@ -25,7 +29,7 @@ function temp_monitor(a)
             pause(0.5)
             writeDigitalPin(a,'D4',0)
             pause(0.5) %lasts for 1 second total
-        elseif temp >= 18 && temp <= 24
+        else
             writeDigitalPin(a,"D2", 1); % Turn on the green LED
             pause(1)
             writeDigitalPin(a,"D2", 0); % Turn off the green LED

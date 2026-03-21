@@ -75,10 +75,13 @@ clear
 
 a = arduino;
 temp_monitor(a)
+doc temp_monitor
+
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [30 MARKS]
+clear
 
-doc temp_monitor
+%enter
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
 
