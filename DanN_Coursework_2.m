@@ -71,13 +71,13 @@ sprintf(string(dataCheck))
 fclose(fileCheck);
 
 %% TASK 2 - LED TEMPERATURE MONITORING DEVICE IMPLEMENTATION [25 MARKS]
+clear
 
-% Insert answers here
-    
+a = arduino;
+temp_monitor(a)
 
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [30 MARKS]
 
-% Insert answers here
 
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
