@@ -81,7 +81,8 @@ doc temp_monitor
 %% TASK 3 - ALGORITHMS – TEMPERATURE PREDICTION [30 MARKS]
 clear
 
-%enter
+a = arduino;
+temp_prediction(a)
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
 
