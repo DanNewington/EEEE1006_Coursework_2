@@ -83,6 +83,7 @@ clear
 
 a = arduino;
 temp_prediction(a)
+doc temp_prediction
 
 %% TASK 4 - REFLECTIVE STATEMENT [5 MARKS]
 
