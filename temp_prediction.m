@@ -9,8 +9,8 @@ function temp_prediction(a)
     aimTime=0.1; %the time aimed for for a total cycle to reread temperature
     addt=0; %requires an inital value and in theory there should be no delay
     z=0; %has to initally be set to 0 so that the addition can be done in the loop correctly
-    l = animatedline; %this was used to check the noise in the output
-    ylim([-10 50]) %limits axis of graph that was used to see noise
+    %l = animatedline; %this was used to check the noise in the output
+    %ylim([-10 50]) %limits axis of graph that was used to see noise
     volt = readVoltage(a, 'A0'); %reads voltage from the thermistor
     temps(1) = (volt - Volt0C)/tempCoef; %there needs to be a value in temps(1) for a later calculation, but this shouldn't be in the loop as it only needs to be done once
     for x = 2:inf %repeats the process indefinitely
@@ -52,9 +52,9 @@ function temp_prediction(a)
             writeDigitalPin(a,'D4',0)
             writeDigitalPin(a,'D7',0)
         end
-        addpoints(l,x,temp5Mins) %creates graph used for checking noise
-        refreshdata
-        drawnow
+        %addpoints(l,x,temp5Mins) %creates graph used for checking noise
+        %refreshdata
+        %drawnow
         sprintf("\n%s %f.2 %s","The temperature now is ", temps(x), "C")
         sprintf("\n%s %f.2 %s","The temperature in 5 mins will be ", temp5Mins, "C")
         addt = toc(); %find how long code takes to alter time paused earleir
